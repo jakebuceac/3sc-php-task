@@ -7,7 +7,7 @@ use DateTimeInterface;
 
 class File implements FileInterface
 {
-    public $file;
+    //public $file;
     public $fileName;
     public $fileSize;
     public $fileCreated;
@@ -22,7 +22,7 @@ class File implements FileInterface
         {
             $this->setName(basename($file));
             $this->setSize(filesize($file));
-            try {
+            try {9
                 $this->setCreatedTime(DateTime::createFromFormat('U', filectime($file)));
             } catch (Exception $e) {
                 echo 'hit';

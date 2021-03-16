@@ -2,18 +2,16 @@
 
 namespace Tsc\CatStorageSystem;
 
-use DateTime;
 use \DateTimeInterface;
-use Exception;
 
 class Directory implements DirectoryInterface
 {
-    public $directory;
+    //public $directory;
     public $directoryName;
     public $directoryCreated;
     public $directoryPath;
 
-    public function __construct($directory)
+/*    public function __construct($directory)
     {
         $this->directory = $directory;
 
@@ -41,7 +39,7 @@ class Directory implements DirectoryInterface
 
         }
         return $this;
-    }
+    }*/
 
 
     public function getName()

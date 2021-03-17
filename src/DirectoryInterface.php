@@ -6,39 +6,44 @@ use \DateTimeInterface;
 
 interface DirectoryInterface
 {
-  /**
-   * @return string
-   */
-  public function getName();
+    /**
+     * @return string
+     */
+    public function getName();
 
-  /**
-   * @param string $directoryName
-   *
-   * @return $this
-   */
-  public function setName($directoryName);
+    /**
+     * @param string $directoryName
+     *
+     * @return $this
+     */
+    public function setName($directoryName);
 
-  /**
-   * @return DateTimeInterface
-   */
-  public function getCreatedTime();
+    /**
+     * @return DateTimeInterface
+     */
+    public function getCreatedTime();
 
-  /**
-   * @param DateTimeInterface $directoryCreated
-   *
-   * @return $this
-   */
-  public function setCreatedTime(DateTimeInterface $directoryCreated);
+    /**
+     * @param DateTimeInterface $directoryCreated
+     *
+     * @return $this
+     */
+    public function setCreatedTime(DateTimeInterface $directoryCreated);
 
-  /**
-   * @return string
-   */
-  public function getPath();
+    /**
+     * @return string
+     */
+    public function getPath();
 
-  /**
-   * @param string $directoryPath
-   *
-   * @return $this
-   */
-  public function setPath($directoryPath);
+    /**
+     * @param string $directoryPath
+     *
+     * @return $this
+     */
+    public function setPath($directoryPath);
+
+    /**
+     * @return string
+     */
+    public function getFullPath();
 }

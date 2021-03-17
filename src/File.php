@@ -7,38 +7,11 @@ use DateTimeInterface;
 
 class File implements FileInterface
 {
-    //public $file;
     public $fileName;
     public $fileSize;
     public $fileCreated;
     public $fileModified;
     public $fileParent;
-
-    /*public function __construct($file)
-    {
-        $this->file = $file;
-
-        if (file_exists($file))
-        {
-            $this->setName(basename($file));
-            $this->setSize(filesize($file));
-            try {9
-                $this->setCreatedTime(DateTime::createFromFormat('U', filectime($file)));
-            } catch (Exception $e) {
-                echo 'hit';
-            }
-            try {
-                $this->setModifiedTime(DateTime::createFromFormat('U', filemtime($file)));
-            } catch (Exception $e) {
-            }
-
-            $this->setParentDirectory($file = new Directory(dirname($file)));
-        } else
-            {
-                throw new Exception('No such file or directory found');
-            }
-    }*/
-
 
     public function getName(): string
     {
@@ -99,6 +72,11 @@ class File implements FileInterface
     public function getPath(): string
     {
         return $this->fileParent->getPath() . "\\" . $this->fileParent->getName();
+    }
+
+    public function getFullPath(): string
+    {
+        return $this->getPath() . '\\' . $this->getName();
     }
 }
 

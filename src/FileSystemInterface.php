@@ -2,26 +2,24 @@
 
 namespace Tsc\CatStorageSystem;
 
-use phpDocumentor\Reflection\Types\Boolean;
-
 interface FileSystemInterface
 {
   /**
    * @param FileInterface   $file
-   * @param string $newFile
+   * @param DirectoryInterface $parent
    *
    *
    * @return FileInterface
    */
-  public function createFile(FileInterface $file, $newFile);
+  public function createFile(FileInterface $file, DirectoryInterface $parent);
 
-  /**
-   * @param FileInterface $file
-   * @param string $newName
-   *
-   * @return FileInterface
-   */
-  public function renameFile(FileInterface $file, $newName);
+    /**
+     * @param FileInterface $file
+     * @param string $newName
+     *
+     * @return FileInterface
+     */
+  public function renameFile(FileInterface $file, string $newName);
 
   /**
    * @param FileInterface $file

@@ -6,73 +6,47 @@ use \DateTimeInterface;
 
 class Directory implements DirectoryInterface
 {
-    //public $directory;
     public $directoryName;
     public $directoryCreated;
     public $directoryPath;
 
-/*    public function __construct($directory)
-    {
-        $this->directory = $directory;
 
-        $this->setName($directory);
-
-
-        if (is_dir($directory) == true)
-        {
-            $this->updateCreatedTime($directory);
-        }
-
-
-        $this->setPath($directory = getcwd());
-    }
-
-    public function updateCreatedTime($directory)
-    {
-        $this->directory = $directory;
-        try
-        {
-            $this->setCreatedTime(DateTime::createFromFormat('U', filectime($directory)));
-        }
-        catch (Exception $e)
-        {
-
-        }
-        return $this;
-    }*/
-
-
-    public function getName()
+    public function getName(): string
     {
         return $this->directoryName;
     }
 
-    public function setName($directoryName)
+    public function setName($directoryName): Directory
     {
         $this->directoryName = $directoryName;
         return $this;
     }
 
-    public function getCreatedTime()
+    public function getCreatedTime(): DateTimeInterface
     {
         return $this->directoryCreated;
     }
 
-    public function setCreatedTime(DateTimeInterface $directoryCreated)
+    public function setCreatedTime(DateTimeInterface $directoryCreated): Directory
     {
         $this->directoryCreated = $directoryCreated;
         return $this;
     }
 
-    public function getPath()
+    public function getPath(): string
     {
         return $this->directoryPath;
     }
 
-    public function setPath($directoryPath)
+    public function setPath($directoryPath): Directory
     {
         $this->directoryPath = $directoryPath;
         return $this;
+    }
+
+    public function getFullPath(): string
+    {
+        return $this->getPath() . '\\' . $this->getName();
     }
 }
 
